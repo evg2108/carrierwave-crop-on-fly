@@ -31,7 +31,7 @@ Add the required files in assets
 In .js file
 
     //= require jquery
-    //= require jcrop_init
+    //= require jcrop.js
 
 In .css file
 
