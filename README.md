@@ -1,4 +1,4 @@
-# CarrierWave-Fly-Crop
+# CarrierWave-Crop-On-Fly
 
 CarrierWave extension for on fly specifying crop area with preview and cropping images before they saved.
 
@@ -8,11 +8,11 @@ this gem based on [carrierwave-crop](https://github.com/kirtithorat/carrierwave-
 
 Install the latest stable release:
 
-    $[sudo] gem install carrierwave-fly-crop
+    $[sudo] gem install carrierwave-crop-on-fly
 
 In Rails, add it to your Gemfile:
 
-    gem 'carrierwave-fly-crop'
+    gem 'carrierwave-crop-on-fly'
     
 Also you must add mini_magick gem
 
