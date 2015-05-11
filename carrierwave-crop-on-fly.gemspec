@@ -15,10 +15,7 @@ Gem::Specification.new do |s|
   s.files        = Dir['{app,lib,vendor,assets}/**/*', 'MIT-LICENSE', 'README.md']
   s.require_paths = %w(lib)
 
-  s.add_dependency 'rails', '>= 3.2'
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'carrierwave', '>= 0.8.0'
-
-  s.add_development_dependency 'bundler', '~> 1.5'
-  s.add_development_dependency 'rake'
+  s.add_dependency 'rails', ['>= 3.2', '~> 0']
+  s.add_dependency 'jquery-rails', '~> 0'
+  s.add_dependency 'carrierwave', ['>= 0.8.0', '~> 0.8']
 end
