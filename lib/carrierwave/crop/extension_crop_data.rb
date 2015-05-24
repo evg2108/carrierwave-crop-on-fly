@@ -1,29 +1,19 @@
-module CarrierWave
-  module Crop
-    module ExtensionCropData
-      extend ActiveSupport::Concern
-
-      included do
-        before :cache, :remember_crop_data
-
-        attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-      end
-
-      private
-
-      def remember_crop_data(file)
-        self.crop_x = file.file.crop_x if file.file.respond_to?(:crop_x)
-        self.crop_y = file.file.crop_y if file.file.respond_to?(:crop_y)
-        self.crop_w = file.file.crop_w if file.file.respond_to?(:crop_w)
-        self.crop_h = file.file.crop_h if file.file.respond_to?(:crop_h)
-      end
-
-    end
-  end
-end
-
 if defined? CarrierWave::Uploader::Base
-  CarrierWave::Uploader::Base.class_eval do
-    include ::CarrierWave::Crop::ExtensionCropData
+  class CarrierWave::Uploader::Base
+
+    attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+
+    alias_method :old_cache!, :cache!
+
+    def cache!(file)
+      if file.is_a?(ActionDispatch::Http::UploadedFile)
+        self.crop_x = file.crop_x
+        self.crop_y = file.crop_y
+        self.crop_w = file.crop_w
+        self.crop_h = file.crop_h
+      end
+
+      old_cache!(file)
+    end
   end
 end
