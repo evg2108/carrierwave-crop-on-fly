@@ -12,10 +12,10 @@ module CarrierWave
       private
 
       def remember_crop_data(file)
-        self.crop_x = file.file.crop_x
-        self.crop_y = file.file.crop_y
-        self.crop_w = file.file.crop_w
-        self.crop_h = file.file.crop_h
+        self.crop_x = file.file.crop_x if file.file.respond_to?(:crop_x)
+        self.crop_y = file.file.crop_y if file.file.respond_to?(:crop_y)
+        self.crop_w = file.file.crop_w if file.file.respond_to?(:crop_w)
+        self.crop_h = file.file.crop_h if file.file.respond_to?(:crop_h)
       end
 
     end
