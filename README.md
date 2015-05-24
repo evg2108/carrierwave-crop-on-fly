@@ -32,6 +32,11 @@ In .js file
 
     //= require jquery
     //= require jcrop.js
+    //= require_self
+    
+    $(document).ready(function() {
+        document.jcrop.init({ file_input_id: 'user_avatar' });
+    });
 
 In .css file
 
