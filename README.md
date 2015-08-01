@@ -53,7 +53,7 @@ Open your model file and add the CarrierWave uploader:
 
 In the CarrierWave uploader:
 
-    class BaseUploader < CarrierWave::Uploader::Base
+    class AvatarUploader < CarrierWave::Uploader::Base
       include CarrierWave::MiniMagick
       process crop: [100, 100]
     end
