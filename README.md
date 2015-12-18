@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/carrierwave-crop-on-fly.svg)](https://badge.fury.io/rb/carrierwave-crop-on-fly)
+
 # CarrierWave-Crop-On-Fly
 
 CarrierWave extension for on fly specifying crop area with preview and cropping images before they saved.
