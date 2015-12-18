@@ -14,9 +14,13 @@ In Rails, add it to your Gemfile:
 
     gem 'carrierwave-crop-on-fly'
     
-Also you must add mini_magick gem
+Also you must add mini_magick or rmagick gem
 
     gem 'mini_magick'
+
+or
+
+    gem 'rmagick'
 
 And then execute:
 
@@ -54,7 +58,11 @@ Open your model file and add the CarrierWave uploader:
 In the CarrierWave uploader:
 
     class AvatarUploader < CarrierWave::Uploader::Base
+      # use mini_magick
       include CarrierWave::MiniMagick
+      # or you may use rmagick:
+      # include CarrierWave::RMagick
+
       process crop: [100, 100]
     end
 
