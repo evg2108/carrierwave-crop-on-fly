@@ -86,7 +86,7 @@ In the CarrierWave uploader:
 
 In the view:
 
-```Ruby
+```erb
     <%= form_for @user do |f| %>
       <%= f.file_field :avatar %>
       <%= f.cropbox :avatar, width: 300, height: 300 %>
