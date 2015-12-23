@@ -97,6 +97,23 @@ In the view:
     <% end %>
 ```
 
+in controller
+
+```Ruby
+    class UsersController < ApplicationController
+        def update
+            @user = User.find(params[:id])
+            @user.update_attributes(user_params)
+        end
+        
+        private
+        
+        def user_params
+            params.require(:user).permit(:avatar)
+        end
+    end
+```
+
 ### Credits and resources
 * [CarrierWave](https://github.com/carrierwaveuploader/carrierwave)
 * [Deep Liquid's JCrop](http://deepliquid.com/content/Jcrop.html)
